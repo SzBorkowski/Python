@@ -1,2 +1,15 @@
-list = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+b = []
+for x in a:
+    if x < 5:
+        b.append(x)
+print(b)
 
+print([x for x in a if x<5])
+
+num = int(input("Enter a number: "))
+c = []
+for x in a:
+    if x < num:
+        c.append(x)
+print(c)
