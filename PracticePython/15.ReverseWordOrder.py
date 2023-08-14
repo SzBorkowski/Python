@@ -7,6 +7,6 @@ def reverse(x):
 def reverse_v2(x):
   return ' '.join(x.split()[::-1])
 
-sentence = str(input("Write a sentence to reverse it: "))
+sentence = str(input("Write a sentence of words to reverse it: "))
 print(reverse(sentence))
 print(reverse_v2(sentence))
