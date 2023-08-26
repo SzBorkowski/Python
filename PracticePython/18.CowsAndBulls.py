@@ -44,8 +44,26 @@ def random4s():
         randlist.append(n)
     return randlist
 
-guessthat = random4s()
-print(guessthat)
-user4s = input("Guess a 4-digit number: ")
-guesslist = [int(x) for x in str(user4s)]
-print(guesslist)
+def cowbullcheck(guessthat, guesslist):
+    cowbull = [0,0]
+    for i in range(len(guessthat)):
+        if guessthat[i] == guesslist[i]:
+            cowbull[0] += 1
+        elif guessthat[i] != guesslist[i] and guesslist[i] in guessthat:
+            cowbull[1] += 1
+    return print("cows: "+str(cowbull[0])+" bulls: "+str(cowbull[1]))
+
+if __name__=="__main__":
+    guessthat = random4s()
+    print(guessthat)
+    nrofguesses = 0
+    while True:
+        nrofguesses += 1
+        user4s = input("Guess a 4-digit number: ")
+        guesslist = [int(x) for x in str(user4s)]
+        print(guesslist)
+        if guesslist == guessthat:
+            print("Correct! It took you "+str(nrofguesses)+" tries!")
+            break
+        else:
+            cowbullcheck(guessthat, guesslist)
