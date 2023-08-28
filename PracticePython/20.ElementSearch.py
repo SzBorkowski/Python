@@ -1,24 +1,28 @@
 import random
 
-randomlist = []
-for i in range(10):
-    n = random.randint(0, 999)
-    randomlist.append(n)
-randomlist.sort()
-print(randomlist)
-randomnumber = random.randint(0, 999)
-print(randomnumber)
+def binarysearch(list, element):
+    start = 1
+    end = len(list) - 1
+    while True:
+        middle = (end - start) / 2
+        if middle < start or middle > end or middle < 0:
+            return False
+        middle = list[middle]
+        if middle == element:
+            return True
+        elif middle < element:
+            end = middle
+        else:
+            start = middle
 
-if randomnumber in randomlist:
-    print(str(randomnumber)+" is present inside the random list.")
-else:
-    print(str(randomnumber) + " is not present inside the random list.")
+if __name__ == "__main__":
+    randomlist = []
+    for i in range(10):
+        n = random.randint(0, 999)
+        randomlist.append(n)
+    randomlist.sort()
+    print(randomlist)
+    randomnumber = random.randint(0, 999)
+    print(randomnumber)
 
-if len(randomlist) % 2 == 0:
-    middle = len(randomlist) / 2
-    shortlist = randomlist[0, middle]
-    print(shortlist)
-else:
-    middle = len(randomlist) / 2 + 1
-    shortlist = randomlist[0, middle]
-    print(shortlist)
+    print(binarysearch(randomlist, randomnumber))
