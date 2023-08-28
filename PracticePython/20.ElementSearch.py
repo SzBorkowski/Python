@@ -26,3 +26,9 @@ if __name__ == "__main__":
     print(randomnumber)
 
     print(binarysearch(randomlist, randomnumber))
+
+    l = [2, 4, 6, 8, 10]
+    print(binarysearch(l, 5))
+    print(binarysearch(l, 10))
+    print(binarysearch(l, -1))
+    print(binarysearch(l, 2))
