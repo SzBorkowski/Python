@@ -7,7 +7,7 @@ def binarysearch(list, element):
         middle = (end - start) / 2
         if middle < start or middle > end or middle < 0:
             return False
-        middle = list[middle]
+        middle = list[int(middle)]
         if middle == element:
             return True
         elif middle < element:
