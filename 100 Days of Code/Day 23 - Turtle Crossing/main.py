@@ -21,7 +21,14 @@ while game_is_on:
     time.sleep(0.1)
     screen.update()
     car_manager.drive()
+
+    # Detect crossing a finish line
     if player.ycor() > 280:
         player.start_line()
         scoreboard.made_it()
-        car_manager.faster()
+        #car_manager.faster()
+
+    # Detect collision with a car
+    if player.pos == car_manager.pos:
+        game_is_on = False
+        scoreboard.game_over()
