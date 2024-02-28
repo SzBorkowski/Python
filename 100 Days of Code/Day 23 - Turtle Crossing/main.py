@@ -20,6 +20,7 @@ game_is_on = True
 while game_is_on:
     time.sleep(0.1)
     screen.update()
+    car_manager.add_car()
     car_manager.drive()
 
     # Detect crossing a finish line
@@ -29,6 +30,8 @@ while game_is_on:
         #car_manager.faster()
 
     # Detect collision with a car
-    if player.pos == car_manager.pos:
-        game_is_on = False
-        scoreboard.game_over()
+    for car in car_manager.cars:
+        if player.distance(car) < 10:
+            scoreboard.game_over()
+
+

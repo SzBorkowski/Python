@@ -9,23 +9,20 @@ MOVE_INCREMENT = 10
 class CarManager:
     def __init__(self):
         self.cars = []
-        self.spawn_cars()
 
-    def spawn_cars(self):
-        for color in COLORS:
-            self.add_car(color)
-
-    def add_car(self, color):
-        new_car = Turtle("square")
-        new_car.color(color)
-        new_car.pu()
-        new_car.setposition(300, random.randint(-250, 250))
-        new_car.setheading(180)
-        self.cars.append(new_car)
+    def add_car(self):
+        random_chance = random.randint(1, 6)
+        if random_chance == 1:
+            new_car = Turtle("square")
+            new_car.shapesize(stretch_len=2)
+            new_car.color(random.choice(COLORS))
+            new_car.pu()
+            new_car.setposition(300, random.randint(-250, 250))
+            self.cars.append(new_car)
 
     def drive(self):
-        for car_num in range(len(self.cars) - 1, 0, -1):
-            self.cars[car_num].forward(STARTING_MOVE_DISTANCE)
+        for car in self.cars:
+            car.backward(STARTING_MOVE_DISTANCE)
 
     def faster(self):
         pass
