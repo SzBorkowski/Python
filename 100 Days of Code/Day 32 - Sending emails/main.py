@@ -42,7 +42,7 @@ password = "pesw wsfa ydmm pols"
 #
 # while True:
 #     now = dt.datetime.now()
-#     if now.weekday() == 0:
+#     if now.weekday() == 3:
 #         send_quote()
 #         # Call your CODE() function here
 #         break
