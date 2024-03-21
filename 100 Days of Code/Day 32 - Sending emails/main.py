@@ -25,7 +25,31 @@ password = "pesw wsfa ydmm pols"
 # print(date_of_birth)
 #
 #
-# SENDING AN EMAIL AT PARTICULAR TIME
+# SENDING A QUOTE ON MONDAYS
+# with open("quotes.txt") as f:
+#     data = f.readlines()
+#     quote = random.choice(data)
+#
+#
+# def send_quote():
+#     print("Sending a quote")
+#     with smtplib.SMTP("smtp.gmail.com") as connection:
+#         connection.starttls()
+#         connection.login(user=my_email, password=password)
+#         connection.sendmail(from_addr=my_email,
+#                             to_addrs="simon345@wp.pl",
+#                             msg=f"Subject:Motivational quote for today\n\n{quote}")
+#
+# while True:
+#     now = dt.datetime.now()
+#     if now.weekday() == 0:
+#         send_quote()
+#         # Call your CODE() function here
+#         break
+#
+#
+# SENDING BIRTHDAY WISHES AUTOMATICALLY
+#
 # def send_wishes():
 #     print("Sending wishes")
 #     with smtplib.SMTP("smtp.gmail.com") as connection:
@@ -42,25 +66,3 @@ password = "pesw wsfa ydmm pols"
 #         # Call your CODE() function here
 #         break
 #
-#
-# SENDING A QUOTE ON MONDAYS
-with open("quotes.txt") as f:
-    data = f.readlines()
-    quote = random.choice(data)
-
-
-def send_quote():
-    print("Sending a quote")
-    with smtplib.SMTP("smtp.gmail.com") as connection:
-        connection.starttls()
-        connection.login(user=my_email, password=password)
-        connection.sendmail(from_addr=my_email,
-                            to_addrs="simon345@wp.pl",
-                            msg=f"Subject:Motivational quote for today\n\n{quote}")
-
-while True:
-    now = dt.datetime.now()
-    if now.weekday() == 0:
-        send_quote()
-        # Call your CODE() function here
-        break
