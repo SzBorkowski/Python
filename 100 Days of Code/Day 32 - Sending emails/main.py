@@ -12,7 +12,7 @@ password = "pesw wsfa ydmm pols"
 #     connection.starttls()
 #     connection.login(user=my_email, password=password)
 #     connection.sendmail(from_addr=my_email,
-#                         to_addrs="simon345@wp.pl",
+#                         to_addrs=my_email,
 #                         msg="Subject:Hello!\n\nEmail body")
 #
 #
@@ -37,7 +37,7 @@ password = "pesw wsfa ydmm pols"
 #         connection.starttls()
 #         connection.login(user=my_email, password=password)
 #         connection.sendmail(from_addr=my_email,
-#                             to_addrs="simon345@wp.pl",
+#                             to_addrs=my_email,
 #                             msg=f"Subject:Motivational quote for today\n\n{quote}")
 #
 # while True:
@@ -56,7 +56,7 @@ password = "pesw wsfa ydmm pols"
 #         connection.starttls()
 #         connection.login(user=my_email, password=password)
 #         connection.sendmail(from_addr=my_email,
-#                             to_addrs="simon345@wp.pl",
+#                             to_addrs=my_email,
 #                             msg="Subject:It's your birthday!\n\nHappy birthday!")
 #
 # while True:
