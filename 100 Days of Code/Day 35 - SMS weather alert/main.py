@@ -1,13 +1,14 @@
+import os
 import requests
 from twilio.rest import Client
 
 # https://api.openweathermap.org/data/2.5/weather?lat=52.229675&lon=21.012230&appid=f5b7565e36039b5af8bf5edb254b87e1
 
 OMW_endpoint = "https://api.openweathermap.org/data/2.5/forecast"
-api_key = input("Input api_key: ")
-account_sid = input("Input account_sid: ")
-auth_token = input("Input your auth_token: ")
-verified_phone = input("Input your verified phone number: ")
+api_key = os.environ['OMW_API_KEY']
+account_sid = "ACb65f258128faaea33e133366265f11a4"
+auth_token = os.environ['TWILIO_AUTH_TOKEN']
+verified_phone = os.environ['TWILIO_VERIFIED_PHONE']
 params = {
     "lat": 52.229675,
     "lon": 21.012230,
